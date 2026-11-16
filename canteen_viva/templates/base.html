@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Campus Bites · Smart Canteen{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header><div class="nav"><a class="brand" href="{{ url_for('home') }}">CB<span>Campus Bites<small>THE SMART COLLEGE CANTEEN</small></span></a>
+    <nav aria-label="Main navigation"><a href="{{ url_for('home') }}">Menu</a><a href="{{ url_for('track') }}">Track order</a><a href="{{ url_for('cart') }}">Cart ({{ session.get('cart', {}).values() | sum }})</a><a href="{{ url_for('admin') }}">Admin</a></nav>
+  </div></header>
+  <main>
+    {% for message in get_flashed_messages() %}<div class="notice" role="status">{{ message }}</div>{% endfor %}
+    {% block content %}{% endblock %}
+  </main>
+  <footer>Campus Bites · Order ahead. Enjoy your break.<span>College project · Pay at pickup</span></footer>
+</body>
+</html>
