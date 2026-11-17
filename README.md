@@ -49,7 +49,7 @@ initial Flask installation; the running project uses no external assets.
 
 ## Admin login
 
-Open **Admin** in the navigation bar.
+Open **Admin** in the navigation bar
 
 **Default local demonstration password: `admin123`**
 
